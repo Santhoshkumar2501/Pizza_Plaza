@@ -45,7 +45,7 @@ function Register() {
 
         "http://localhost:5000/api/auth/register",
 
-        formDatazz
+        formData
 
       );
 
