@@ -7,12 +7,7 @@ const app = express();
 const pizzaRoutes = require("./routes/pizzaRoutes");
 const orderRoutes = require("./routes/orderRoutes");
 const inventoryRoutes = require("./routes/inventoryRoutes");
-const path = require("path");
 
-
-app.use(express.static(
-  path.join(__dirname, "../client/dist")
-));
 app.use(cors());
 app.use(express.json());
 app.use("/api/auth", authRoutes);
@@ -33,18 +28,7 @@ app.get("/", (req, res) => {
   res.send("API Running");
 });
 
-app.get("*", (req, res) => {
 
-  res.sendFile(
-
-    path.join(
-      __dirname,
-      "../client/dist/index.html"
-    )
-
-  );
-
-});
 
 app.listen(5000, () => {
   console.log("Server Running");
